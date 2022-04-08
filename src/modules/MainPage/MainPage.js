@@ -23,22 +23,23 @@ function MainPage() {
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'}
     ]
 
-    const [background, getBackground] = useState([]);
+    // const [background, getBackground] = useState([]);
   
-    useEffect(() => {
-        (async () => {
-            try {
-                const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
-                getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
-                console.log(background)
-            } catch (e) {
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         try {
+    //             const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
+    //             getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
+    //             console.log(background)
+    //         } catch (e) {
+    //         }
+    //     })();
+    // }, []);
 
     return (
         <div>
-            <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}>
+            {/* <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}> */}
+            <div className="mainBackground">
                 {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
                     <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
                     Your browser does not support the video tag.
