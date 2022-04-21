@@ -1,7 +1,7 @@
 import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
-import TeamPage from '../TeamPage/TeamPage'
+import TeamPage from '../ExcursionPage/ExcursionPage'
 
 function App() {
   return (
