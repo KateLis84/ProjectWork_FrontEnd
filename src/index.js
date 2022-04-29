@@ -11,8 +11,8 @@ ReactDOM.render(
   <React.StrictMode>
     
     <App />
-    {/* <Block /> */}
-    {/* <News /> */}
+    <Block />
+    <News />
   </React.StrictMode>,
   document.getElementById('root')
 );
