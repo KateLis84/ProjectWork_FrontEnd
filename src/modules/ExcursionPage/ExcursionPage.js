@@ -6,26 +6,15 @@ import AddIcon from '@mui/icons-material/Add';
 
 const text = `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`
 const photo = 'https://i.ibb.co/bvXYV7y/image-12.png'
-const servicesList = [
-    {
-        serviceTitle: 'Тематичні лекції',
-        serviceDescription: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-    },
-    {
-        serviceTitle: 'Майстер-класи',
-        serviceDescription: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-    },
-    {
-        serviceTitle: 'Фото-, відеозйомка в експозиції та на території Музею',
-        serviceDescription: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-    },
-    {
-        serviceTitle: 'Експозиційний відділ',
-        serviceDescription: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-    },
-]
+
+fetch('http://frankos-museum-backend.azurewebsites.net/excursion/')
+  .then(response => response.json())
+  .then(data => localStorage.setItem('servicesList', JSON.stringify(data)));
+
 
 function Excurtion() {
+
+  const servicesList = JSON.parse(localStorage.getItem('servicesList')).excursion
   return (
       <div className="mainContainer">
         <Grid container spacing={1}>
@@ -55,10 +44,10 @@ function Excurtion() {
                 <AccordionSummary
                   expandIcon={<AddIcon/>}
                   className="departmentTitle">
-                    {service.serviceTitle}
+                    {service.excursion}
                 </AccordionSummary>
-                <AccordionDetails>
-                    {service.serviceDescription}
+                <AccordionDetails className="serviceText">
+                    {service.text}
                 </AccordionDetails>
               </Accordion>
               )

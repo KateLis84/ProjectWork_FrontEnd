@@ -11,8 +11,6 @@ ReactDOM.render(
   <React.StrictMode>
     
     <App />
-    <Block />
-    <News />
   </React.StrictMode>,
   document.getElementById('root')
 );
